@@ -1,0 +1,60 @@
+{
+  "version": "0.1.0",
+  "verificationStage": "Local release preparation before GitHub publication; remote fields below describe this historical snapshot. Current remote status is available in the repository and GitHub Actions.",
+  "verifiedAt": "2026-11-25T14:15:40.655Z",
+  "timeZone": "Asia/Shanghai",
+  "environment": {
+    "os": "Windows",
+    "architecture": "x64",
+    "node": "v24.22.3",
+    "npm": "11.19.1"
+  },
+  "sourceReproduction": {
+    "source": "Git index snapshot ZIP extracted into a separate directory",
+    "originalDependenciesCopied": false,
+    "install": "npm ci --no-audit --no-fund",
+    "installPassed": true,
+    "repositoryChecksPassed": true,
+    "protocolTests": {
+      "passed": 13,
+      "total": 13
+    },
+    "productionBuildPassed": true,
+    "desktopTests": {
+      "passed": 15,
+      "total": 15,
+      "rendererErrors": 0,
+      "target": "controlled local HTTP fixture; not a real gateway or cloud model"
+    }
+  },
+  "distribution": {
+    "directoryPackagePassed": true,
+    "extractedZipLaunchPassed": true,
+    "isPackaged": true,
+    "appVersion": "0.1.0",
+    "rendererErrors": 0,
+    "nodeIntegration": false,
+    "contextIsolation": true,
+    "sandbox": true,
+    "zipFileEntries": 76,
+    "zipCrcPassed": true,
+    "zipStandardSeparators": true,
+    "appAndThirdPartyLicensesPresent": true,
+    "privateBuildDirectoriesAbsent": true,
+    "windowsCodeSigned": false
+  },
+  "github": {
+    "repositoryInitialized": true,
+    "branch": "main",
+    "workflowYamlParsed": true,
+    "actionsPinnedToCommit": true,
+    "remoteCreated": false,
+    "pushed": false,
+    "remoteCiStatus": "not_run"
+  },
+  "realGatewayAndCloudModelAcceptance": "pending",
+  "limitations": [
+    "Credential scanning covers common patterns only",
+    "Local controlled-fixture tests do not establish production reliability or model quality"
+  ]
+}

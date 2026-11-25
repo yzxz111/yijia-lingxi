@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.png binary
+*.ico binary
+*.zip binary
+THIRD_PARTY_NOTICES.md whitespace=-blank-at-eol

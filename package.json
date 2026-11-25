@@ -1,0 +1,50 @@
+{
+  "name": "yijia-lingxi",
+  "productName": "一加灵犀",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "keywords": ["electron", "react", "ai-client", "sse", "desktop"],
+  "type": "module",
+  "description": "一加 AI 中台的独立 Electron 桌面下游客户端",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yzxz111/yijia-lingxi.git"
+  },
+  "homepage": "https://github.com/yzxz111/yijia-lingxi#readme",
+  "bugs": {
+    "url": "https://github.com/yzxz111/yijia-lingxi/issues"
+  },
+  "main": "electron/main.mjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5178 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4178 --strictPort",
+    "start": "node scripts/start.mjs",
+    "test": "node --test tests/gateway.test.mjs",
+    "test:desktop": "node scripts/smoke.mjs",
+    "test:package": "node scripts/verify-package.mjs",
+    "check:repo": "node scripts/check-repository.mjs",
+    "check": "npm run check:repo && npm test && npm run build",
+    "notices": "node scripts/update-notices.mjs",
+    "package": "node scripts/package.mjs",
+    "release:zip": "node scripts/release-zip.mjs"
+  },
+  "dependencies": {
+    "dompurify": "^3.5.0",
+    "lucide-react": "^1.80.0",
+    "marked": "^18.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "electron": "^45.5.0",
+    "playwright": "^1.65.1",
+    "vite": "^8.3.8"
+  }
+}

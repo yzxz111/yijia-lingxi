@@ -1,0 +1,60 @@
+name: Client checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: client-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  windows:
+    name: Windows desktop and distribution
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Check repository, protocol and production build
+        run: npm run check
+      - name: Exercise Electron against a controlled local fixture
+        run: npm run test:desktop
+      - name: Build Windows application
+        run: npm run package
+      - name: Verify packaged application
+        run: npm run test:package
+      - name: Create Windows archive and checksum
+        run: npm run release:zip
+      - name: Keep test evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: windows-test-evidence
+          path: |
+            test-results/*.json
+            test-results/*.png
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Keep distribution for manual release
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: windows-x64-distribution
+          path: |
+            release/*.zip
+            release/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 14
