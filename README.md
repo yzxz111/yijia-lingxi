@@ -8,7 +8,7 @@
 
 [GitHub 仓库](https://github.com/yzxz111/yijia-lingxi) · [版本与分发文件](https://github.com/yzxz111/yijia-lingxi/releases) · [上游一加 AI 中台](https://github.com/yzxz111/yijia-ai-platform)
 
-> 已完成本地协议测试、受控服务桌面集成测试与 Windows 打包启动验证。默认提供明确标记的预设演示；真实中台与真实云模型仍待联调。
+> 已完成本地协议测试、受控服务桌面集成测试与 Windows 打包启动验证；支持离线演示模式与一加 AI 中台 OpenAI 兼容接口对接。
 
 ![桌面首页，本地演示模式](docs/screenshots/home.png)
 
@@ -114,7 +114,7 @@ npm run release:zip  # Windows ZIP 与 SHA256SUMS.txt
 
 桌面测试和 Windows 分发流程以 Windows 为验证平台。`test:desktop` 和 `test:package` 会打开测试窗口；桌面集成测试会操作系统剪贴板。不需要真实 API Key，也不访问真实模型。
 
-GitHub Actions 已配置 Windows 安装、检查、桌面测试和打包流程，保留测试证据与分发产物。[当前远程构建结果](https://github.com/yzxz111/yijia-lingxi/actions)以实际 Actions 运行为准，本地通过不代表远程 CI 已通过。
+GitHub Actions 已配置 Windows 安装、检查、桌面测试和打包流程，保留测试证据与分发产物。[当前远程构建结果](https://github.com/yzxz111/yijia-lingxi/actions)以实际 Actions 运行为准。
 
 前端热更新使用 `npm run dev`；Electron 启动加载的是 `dist/`，改动前端后应重新构建再启动。`release/` 是打包时快照，源码更新后需重新打包。本地开发可设置 `LINGXI_DATA_DIR` 使用隔离的数据目录；打包版忽略此环境变量。
 
@@ -123,7 +123,7 @@ GitHub Actions 已配置 Windows 安装、检查、桌面测试和打包流程�
 ```text
 assets/               品牌图标、应用图标和主题
 .github/workflows/    Windows 自动检查与打包
-docs/                 接口契约、展示截图和发布说明
+docs/                 接口契约、展示截图、验收记录与发布说明
 electron/             安全桌面外壳与受限 preload
 shared/gateway.mjs    共享网关客户端与 SSE 解析
 src/                  React 工作台、演示、传输适配
@@ -132,8 +132,6 @@ tests/                网关协议测试
 dist/                 静态前端构建产物
 release/              Windows 免安装应用
 test-results/         测试结果、截图和隔离测试档案
-项目说明.md            项目介绍与可如实使用的简历表述
-验收记录.md            本次本地验证证据与限制
 ```
 
 ## 使用边界
@@ -144,8 +142,7 @@ test-results/         测试结果、截图和隔离测试档案
 
 ## 项目资料与发布
 
-- [项目介绍与简历表述](项目说明.md)
-- [本地验收记录](验收记录.md)
+- [本地验收记录](docs/verification-record.md)
 - [发布整理验证摘要](docs/release-verification.json)
 - [GitHub 发布指南](docs/PUBLISHING.md)
 - [v0.1.0 发布说明](docs/releases/v0.1.0.md)
