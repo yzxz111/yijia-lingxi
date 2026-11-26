@@ -93,4 +93,4 @@
 
 上述发布整理阶段未创建 GitHub 远程仓库、未推送、未打标签、未发布 Release，也未代填提交作者身份。该段保留当时的验证边界；后续公开状态见 [项目仓库](https://github.com/yzxz111/yijia-lingxi)，远程 CI 以 [Actions 实际运行](https://github.com/yzxz111/yijia-lingxi/actions)为准。真实中台与云模型联调仍未完成。
 
-发布步骤见 [GitHub 发布指南](docs/PUBLISHING.md)，结构化摘要见 [发布整理验证摘要](docs/release-verification.json)。
+发布步骤见 [GitHub 发布指南](PUBLISHING.md)，结构化摘要见 [发布整理验证摘要](release-verification.json)。
