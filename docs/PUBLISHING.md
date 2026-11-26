@@ -81,6 +81,6 @@ Get-FileHash release/yijia-lingxi-0.1.0-windows-x64.zip -Algorithm SHA256
 
 正文采用 [v0.1.0 发布说明](releases/v0.1.0.md)，上传 Windows ZIP 与 `SHA256SUMS.txt`。保留真实模型待联调、默认预设演示和未代码签名的说明。
 
-## 简历与演示
+## 演示与联调说明
 
-项目介绍见 [项目说明](../项目说明.md)。可如实量化本地测试范围。面试演示可先离线展示助手、聊天、收藏和导出；真实模型展示需提前完成 [网关联调](gateway-contract.md#真实联调验收)。
+项目功能与架构介绍见 [README](../README.md)，本地验证范围见 [本地验收记录](verification-record.md)。离线演示可展示助手、聊天、收藏和导出；真实模型展示需提前完成 [网关联调](gateway-contract.md#真实联调验收)。
