@@ -25,4 +25,4 @@
 - Windows 分发包未做代码签名。
 - 当前没有账号登录、云同步、聊天加密、多模态、RAG 或工具调用。
 
-详见 [本地验收记录](验收记录.md) 和 [版本发布说明](docs/releases/v0.1.0.md)。
+详见 [本地验收记录](docs/verification-record.md) 和 [版本发布说明](docs/releases/v0.1.0.md)。
